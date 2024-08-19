@@ -5,6 +5,7 @@ const { validateRequiredFields } = require("../utills/validateRequiredFields");
 exports.createContact = async (req, res) => {
   try {
     const { fullName, phone, email, company, message } = req.body;
+    console.log(req.body);
     const requiredFields = ["fullName", "phone", "email", "company", "message"];
     const missingFieldMessage = validateRequiredFields(
       requiredFields,
@@ -26,6 +27,7 @@ exports.createContact = async (req, res) => {
       .status(200)
       .json({ success: true, message: "Contact Form Submitted Successfully" });
   } catch (error) {
+    console.log(error);
     return res.status(400).json({ success: false, message: error.message });
   }
 };
