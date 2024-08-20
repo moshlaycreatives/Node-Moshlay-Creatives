@@ -1,16 +1,19 @@
 const Job = require("../models/jobs");
+const { validateRequiredFields } = require("../utills/validateRequiredFields");
 
 exports.createJob = async (req, res) => {
   try {
     const {
       jobTitle,
       location,
+      jobDesignation,
       experienceRequired,
       jobType,
       jobTime,
       jobDescription,
       responsiblities,
       qualification,
+      mainDesignation,
     } = req.body;
 
     const requiredFields = [
@@ -21,6 +24,8 @@ exports.createJob = async (req, res) => {
       "jobDescription",
       "responsiblities",
       "qualification",
+      "jobDesignation",
+      "mainDesignation",
     ];
     const missingFieldMessage = validateRequiredFields(
       requiredFields,
@@ -41,6 +46,8 @@ exports.createJob = async (req, res) => {
       jobDescription,
       responsiblities,
       qualification,
+      jobDesignation,
+      mainDesignation,
     });
     return res
       .status(200)

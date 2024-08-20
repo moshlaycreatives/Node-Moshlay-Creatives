@@ -6,6 +6,14 @@ const jobSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    mainDesignation: {
+      type: String,
+      trim: true,
+    },
+    jobDesignation: {
+      type: String,
+      trim: true,
+    },
     location: {
       type: String,
       trim: true,
