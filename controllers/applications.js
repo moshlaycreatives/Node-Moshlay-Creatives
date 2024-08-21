@@ -15,6 +15,7 @@ exports.applyNow = async (req, res) => {
       currentSalary,
       expectedSalary,
     } = req.body;
+    // console.log(req.file);
     const requiredFields = [
       "jobId",
       "fullName",

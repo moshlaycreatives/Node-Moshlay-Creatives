@@ -41,8 +41,8 @@ const jobSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    responsiblities: [String],
-    qualification: [String],
+    responsiblities: String,
+    qualification: String,
   },
   {
     timestamps: true,
